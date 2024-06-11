@@ -1,5 +1,4 @@
 
-//새 명령 시행 도중에 오면 그 새로운 명령 시행하기
 #include <pthread.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -555,7 +554,7 @@ static int PWMWriteDutyCycle(int pwmnum, int value) {
   char path[VALUE_MAX];
   int fd, byte;
 
-  // TODO: Enter the duty_cycle path.
+  // by koh TODO: Enter the duty_cycle path.
   snprintf(path, VALUE_MAX, "/sys/class/pwm/pwmchip0/pwm0/duty_cycle", pwmnum);
   fd = open(path, O_WRONLY);
   if (-1 == fd) {
@@ -573,3 +572,4 @@ static int PWMWriteDutyCycle(int pwmnum, int value) {
 
   return (0);
 }
+
